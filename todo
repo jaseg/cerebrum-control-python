@@ -1,0 +1,6 @@
+* Implement persistent "events" to control LEDs
+    * twitter
+    * pcap
+* Implement UDP interface
+* Implement meter API
+    * sandbox?
