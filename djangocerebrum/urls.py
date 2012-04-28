@@ -1,11 +1,6 @@
 from django.conf.urls import patterns, include, url
 from djangocerebrum.cerebrum import views, panel_driver
 
-log = logging.getLogger()
-log.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
-log.debug("Loading url patterns")
-log.debug("Le interface: ", views.PanelDriverRpcWrapper.getInterface(panel_driver.PanelDriver.driver))
-
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()

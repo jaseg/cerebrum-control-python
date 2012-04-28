@@ -4,12 +4,12 @@ from django.conf.urls.defaults import patterns, url
 from django.core.urlresolvers import reverse
 from jsonrpc import JsonRpc, publicmethod
 from django.http import HttpResponse
-import panel_driver
-from panel_driver import LAMP_COUNT, METER_COUNT
+from djangocerebrum.cerebrum import panel_driver
+from djangocerebrum.cerebrum.panel_driver import LAMP_COUNT, METER_COUNT
 import logging
 
 log = logging.getLogger()
-log.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+#log.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 log.debug("Loading views")
 
 #Home page
@@ -21,7 +21,7 @@ def home(request):
 
 class PanelDriverRestView(views.View):
     def get(self, request):
-        return {"lamps": [reverse('panel-lamp', kwargs={'num': num}) for num in range(panel_driver.LAMP_COUNT)], "meters": [reverse('panel-meter', kwargs={'num': num}) for num in range(panel_driver.METER_COUNT)]}
+        return {"lamps": [reverse('panel-lamp', kwargs={'num': num}) for num in range(LAMP_COUNT)], "meters": [reverse('panel-meter', kwargs={'num': num}) for num in range(METER_COUNT)]}
 
 class PanelLampRestView(views.View):
     def get(self, request, num):

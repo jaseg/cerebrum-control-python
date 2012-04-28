@@ -154,3 +154,7 @@ LOGGING = {
         },
     }
 }
+
+#~~~~~~~~~~~~~~~~~~~~~~!!!~~~~~~!!!~~~~~~~~~~~~~~~~~~~~~~~~
+#from djangocerebrum.cerebrum import panel_driver
+
